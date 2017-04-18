@@ -1,10 +1,3 @@
-### Images ###
-pokeminer/static/assets/
-pokeminer/static/forts/
-pokeminer/static/icons/
-pokeminer/static/larger-icons/
-pokeminer/static/original-icons/
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -101,7 +94,12 @@ ENV/
 
 # configuration
 config.py
+accounts*.csv
+banned.csv
 templates/footer.html
+templates/custom.html
+static/css/custom.css
+static/js/custom.js
 
 # script
 *pickle_landmarks.py
@@ -109,6 +107,7 @@ templates/footer.html
 # storage and logging
 *.sqlite
 *.log
+scan.log.*
 *.pickle
 *.xz
 pickles/
@@ -129,3 +128,9 @@ notification-images/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+### Images ###
+monocle/static/monocle-icons
+
+### IntelliJ IDEA ###
+.idea
