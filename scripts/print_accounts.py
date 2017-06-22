@@ -11,12 +11,15 @@ with pickle_path.open('rb') as f:
     accounts = load(f)
 
 for account in accounts.values():
-    if 'time' in account:
-        account['time'] = datetime.fromtimestamp(account['time']).strftime('%x %X')
-    if 'created' in account:
-        account['created'] = datetime.fromtimestamp(account['created']).strftime('%x %X')
-    if 'expiry' in account:
-        account['expiry'] = datetime.fromtimestamp(account['expiry']).strftime('%x %X')
+    try:
+        if 'time' in account:
+            account['time'] = datetime.fromtimestamp(account['time']).strftime('%x %X')
+        if 'created' in account:
+            account['created'] = datetime.fromtimestamp(account['created']).strftime('%x %X')
+        if 'expiry' in account:
+            account['expiry'] = datetime.fromtimestamp(account['expiry']).strftime('%x %X')
+    except OSError as e:
+        pass
 
 pp = PrettyPrinter(indent=3)
 pp.pprint(accounts)
